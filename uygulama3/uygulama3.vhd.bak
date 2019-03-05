@@ -1,0 +1,55 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity uygulama3 is
+	Port(	clk     : in	std_logic;
+			rst	: in	std_logic;
+			o	: out	std_logic_vector(7 downto 0));
+	end uygulama3;
+
+architecture behavioral of uygulama3 is
+begin
+	process(rst,clk)
+		variable	counter:integer;
+		variable	counter2:integer;
+	begin
+	
+		if (rst='0') then
+		o<=x"00";
+		counter:=0;
+		counter2:=0;
+		else
+		if rising_edge(clk) then
+		counter:=counter+1;
+		if (counter>100000) then
+		counter:=0;
+		if (counter2<340) then
+		counter2:=counter2+1;
+		else
+		counter2:=0;
+		end if;
+		end if;
+
+   case counter2 is
+   when 20 => o <=x"01";
+   when 40=>  o <=x"02";
+   when 60=>  o <=x"04";
+   when 80=>  o <=x"08";
+   when 100=> o <=x"10";
+   when 120=> o <=x"20";
+   when 140=> o <=x"40";
+   when 160=> o <=x"80";
+   when 180=> o <=x"80";
+   when 200=> o <=x"40";
+   when 220=> o <=x"20";
+   when 240=> o <=x"10";
+   when 260=> o <=x"08";
+   when 280=> o <=x"04";
+   when 300=> o <=x"02";
+   when 320=> o <=x"01";
+   when others =>
+   end case;
+   end if;
+   end if;
+ end process;
+end Behavioral;

@@ -1,0 +1,18 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity uygulama7 is port(
+
+	LCD_RW
+	LCD_RS
+	LCD_ON
+	LCD_EN
+	LCD_DATA[0]
+	LCD_DATA[1]
+	LCD_DATA[2]
+	LCD_DATA[3]
+	LCD_DATA[4]
+	LCD_DATA[5]
+	LCD_DATA[6]
+	LCD_DATA[7]
+	LCD_BLON

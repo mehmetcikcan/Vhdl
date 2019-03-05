@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Feb 22 13:51:19 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : uygulama5
+Top-level Entity Name : uygulama5
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Timing Models : Final
+Total logic elements : 655 / 114,480 ( < 1 % )
+    Total combinational functions : 654 / 114,480 ( < 1 % )
+    Dedicated logic registers : 260 / 114,480 ( < 1 % )
+Total registers : 260
+Total pins : 58 / 529 ( 11 % )
+Total virtual pins : 0
+Total memory bits : 0 / 3,981,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
