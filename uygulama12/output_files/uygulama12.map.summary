@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Apr 24 02:04:32 2019
+Analysis & Synthesis Status : Successful - Wed Apr 24 07:37:49 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : uygulama12
 Top-level Entity Name : uygulama12
 Family : Cyclone IV E
-Total logic elements : 9,477
-    Total combinational functions : 6,573
-    Dedicated logic registers : 5,639
-Total registers : 5639
+Total logic elements : 9,432
+    Total combinational functions : 6,470
+    Dedicated logic registers : 5,697
+Total registers : 5697
 Total pins : 45
 Total virtual pins : 0
 Total memory bits : 6,595

@@ -23,13 +23,14 @@ use ieee.std_logic_arith.all;
 		SIGNAL durum8    : INTEGER RANGE 0 TO 50 := 0;
 		SIGNAL durum9    : INTEGER RANGE 0 TO 40 := 5;
 		SIGNAL durum10    : INTEGER RANGE 0 TO 40 := 0;
+		SIGNAL durum11    : INTEGER RANGE 0 TO 40 := 4;
 		SIGNAL counter1  : std_logic;
 
 		constant one  	  : std_logic_vector(31 downto 0) := x"3f800000"; -- 1
 
 
-		TYPE bias IS ARRAY (0 TO 9) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;						  
-		constant bias_all: bias := (x"3f800000", x"40000000", x"40400000", x"40800000", x"40a00000" , x"40c00000", x"40e00000", x"41000000", x"41100000", x"41200000"); -- 1-2-3...-10
+		TYPE bias IS ARRAY (0 TO 6) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;						  
+		constant bias_all: bias := (x"3f800000", x"40000000", x"40400000", x"40800000", x"40a00000" , x"40c00000", x"40e00000"); -- 1-2-3...-7
 
 
 		TYPE xyz IS ARRAY (0 TO 2) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;						  
@@ -61,7 +62,7 @@ use ieee.std_logic_arith.all;
 		TYPE z5 IS ARRAY (0 TO 2) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
 		signal inputs_weights_z5: z5;
 		
-		TYPE z25 IS ARRAY (0 TO 4) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
+		TYPE z25 IS ARRAY (0 TO 9) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
 		signal inputs_weights2: z25;
 
 		TYPE Z12345 IS ARRAY (0 TO 4) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
@@ -70,10 +71,10 @@ use ieee.std_logic_arith.all;
 		TYPE Zall12345 IS ARRAY (0 TO 4) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
 		signal Z_all2: Zall12345;
 		
-		TYPE g_z1 IS ARRAY (0 TO 5) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
+		TYPE g_z1 IS ARRAY (0 TO 4) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
 		signal gz1: g_z1;
 		
-		TYPE g_z2 IS ARRAY (0 TO 5) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
+		TYPE g_z2 IS ARRAY (0 TO 4) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
 		signal gz2: g_z2;
 
 		TYPE Zadd1 IS ARRAY (0 TO 2) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
@@ -94,18 +95,27 @@ use ieee.std_logic_arith.all;
 		TYPE Zadd IS ARRAY (0 TO 10) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
 		signal Z_add: Zadd;
 		
-		TYPE Zaddminus IS ARRAY (0 TO 10) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
-		signal Z_addminus: Zaddminus;
+		TYPE Zaddminus1 IS ARRAY (0 TO 10) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
+		signal z_addminus1: Zaddminus1;
+		
+		TYPE Zaddminus2 IS ARRAY (0 TO 10) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
+		signal z_addminus2: Zaddminus2;
 		
 		TYPE Zsub IS ARRAY (0 TO 10) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
 		signal Z_sub: Zsub;
 
 		
-		TYPE expz IS ARRAY (0 TO 4) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
-		signal exp_z: expz;
+		TYPE expz1 IS ARRAY (0 TO 4) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
+		signal exp_z1: expz1;
+
+		TYPE expz2 IS ARRAY (0 TO 4) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
+		signal exp_z2: expz2;
 		
-		TYPE expinvz IS ARRAY (0 TO 4) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
-		signal exp_minusz: expinvz;
+		TYPE expinvz1 IS ARRAY (0 TO 4) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
+		signal exp_minusz1: expinvz1;
+		
+		TYPE expinvz2 IS ARRAY (0 TO 4) OF STD_LOGIC_VECTOR(31 DOWNTO 0) ;
+		signal exp_minusz2: expinvz2;
 	
 
 		signal add_input_a : std_logic_vector(31 downto 0) := x"00000000";
@@ -378,77 +388,77 @@ use ieee.std_logic_arith.all;
 			end if;
 			
 			if (durum4 = 6) then
-				z_addminus(0) <= z_add1(2);
-				z_addminus(1) <= z_add2(2);
-				z_addminus(2) <= z_add3(2);
-				z_addminus(3) <= z_add4(2);
-				z_addminus(4) <= z_add5(2);
+				z_addminus1(0) <= z_add1(2);
+				z_addminus1(1) <= z_add2(2);
+				z_addminus1(2) <= z_add3(2);
+				z_addminus1(3) <= z_add4(2);
+				z_addminus1(4) <= z_add5(2);
 			
-				z_addminus(0)(31 downto 31) <= not z_add1(2)(31 downto 31);
-				z_addminus(1)(31 downto 31) <= not z_add2(2)(31 downto 31);
-				z_addminus(2)(31 downto 31) <= not z_add3(2)(31 downto 31);
-				z_addminus(3)(31 downto 31) <= not z_add4(2)(31 downto 31);
-				z_addminus(4)(31 downto 31) <= not z_add5(2)(31 downto 31);
+				z_addminus1(0)(31 downto 31) <= not z_add1(2)(31 downto 31);
+				z_addminus1(1)(31 downto 31) <= not z_add2(2)(31 downto 31);
+				z_addminus1(2)(31 downto 31) <= not z_add3(2)(31 downto 31);
+				z_addminus1(3)(31 downto 31) <= not z_add4(2)(31 downto 31);
+				z_addminus1(4)(31 downto 31) <= not z_add5(2)(31 downto 31);
 				durum4 <= 7;
 			end if;
 			
 			if (durum4 = 7) then
 				exp_input1 <= z_add1(2);
-				exp_input2 <= z_addminus(0);
+				exp_input2 <= z_addminus1(0);
 				durum4 <= 8;
 			end if;
 			
 			if (durum4 = 8) then
-				exp_z(0) <= exp_out1;
-				exp_minusz(0) <= exp_out2;
+				exp_z1(0) <= exp_out1;
+				exp_minusz1(0) <= exp_out2;
 				durum4 <= 9;
 			end if;
 			
 			if (durum4 = 9) then
 				exp_input1 <= z_add2(2);
-				exp_input2 <= z_addminus(1);
+				exp_input2 <= z_addminus1(1);
 				durum4 <= 10;
 			end if;
 			
 			if (durum4 = 10) then
-				exp_z(1) <= exp_out1;
-				exp_minusz(1) <= exp_out2;
+				exp_z1(1) <= exp_out1;
+				exp_minusz1(1) <= exp_out2;
 				durum4 <= 11;
 			end if;
 			
 			if (durum4 = 11) then
 				exp_input1 <= z_add3(2);
-				exp_input2 <= z_addminus(2);
+				exp_input2 <= z_addminus1(2);
 				durum4 <= 12;
 			end if;
 			
 			if (durum4 = 12) then
-				exp_z(2) <= exp_out1;
-				exp_minusz(2) <= exp_out2;
+				exp_z1(2) <= exp_out1;
+				exp_minusz1(2) <= exp_out2;
 				durum4 <= 13;
 			end if;
 			
 			if (durum4 = 13) then
 				exp_input1 <= z_add4(2);
-				exp_input2 <= z_addminus(3);
+				exp_input2 <= z_addminus1(3);
 				durum4 <= 14;
 			end if;
 			
 			if (durum4 = 14) then
-				exp_z(3) <= exp_out1;
-				exp_minusz(3) <= exp_out2;
+				exp_z1(3) <= exp_out1;
+				exp_minusz1(3) <= exp_out2;
 				durum4 <= 15;
 			end if;
 			
 			if (durum4 = 15) then
 				exp_input1 <= z_add5(2);
-				exp_input2 <= z_addminus(4);
+				exp_input2 <= z_addminus1(4);
 				durum4 <= 16;
 			end if;
 			
 			if (durum4 = 16) then
-				exp_z(4) <= exp_out1;
-				exp_minusz(4) <= exp_out2;
+				exp_z1(4) <= exp_out1;
+				exp_minusz1(4) <= exp_out2;
 				durum4 <= 17;
 			end if;
 			
@@ -459,7 +469,7 @@ use ieee.std_logic_arith.all;
 				if (SW(6 downto 5) = "00") then
 					if (durum6 = 0) then			-- sigmoid
 						add_input_a <= one;
-						add_input_b <= exp_minusz(durum5);
+						add_input_b <= exp_minusz1(durum5);
 						durum6 <= 1;
 
 					elsif (durum6 = 1) then		-- sigmoid
@@ -486,10 +496,10 @@ use ieee.std_logic_arith.all;
 --------------------------------------------------------------------------------------
 				if (SW(6 downto 5) = "01") then
 					if (durum6 = 0) then			-- hyperbolic
-						sub_input_a <= exp_z(durum5);
-						sub_input_b <= exp_minusz(durum5);
-						add_input_a <= exp_z(durum5);
-						add_input_b <= exp_minusz(durum5);
+						sub_input_a <= exp_z1(durum5);
+						sub_input_b <= exp_minusz1(durum5);
+						add_input_a <= exp_z1(durum5);
+						add_input_b <= exp_minusz1(durum5);
 						durum6 <= 1;
 
 					elsif (durum6 = 1) then		-- hyperbolic
@@ -567,8 +577,8 @@ use ieee.std_logic_arith.all;
 					durum7 <= 0;
 				end if;
 			end if;
-			
---			if (durum4 = 19) then									------------------------------------------------------
+--
+--			if (durum4 = 19) then
 --				if (durum7 = 0 and durum8 < 5) then
 --					mult_input_a <= weights_2(durum9);
 --					mult_input_b <= gz1(durum8);
@@ -584,25 +594,190 @@ use ieee.std_logic_arith.all;
 --					durum7 <= 0;
 --				end if;
 --			end if;
-			
+----------------------------------------------------------------------------------------
+--
 --			if (durum4 = 20) then
---				if (durum9 = 0) then
+--				if (durum7 = 0) then
 --					add_input_a <= inputs_weights2(0);
 --					add_input_b <= inputs_weights2(1);
---					durum9 <= 1;
---				end if;
+--					durum7 <= 1;
+--
+--				elsif (durum7 = 1) then
+--					z_add(durum10)<= add_result;					----------------- z_add(3)
+--					durum10 <= durum10 +1;
+--					durum7 <= 2;
+--					if (durum10 = 3) then
+--						durum7 <= 3;
+--					end if;
+--
+--				elsif (durum7 = 2) then
+--					add_input_a <= z_add(durum10-1);
+--					add_input_b <= inputs_weights2(durum10+1);
+--					durum7 <= 1;
 --				
---				if (durum9 = 1) then
---					z_add(durum10)<= add_result;
---					durum9 <= 2;
---				end if;
---				
---				if (durum9 = 2) then
---					add_input_a <= z_add(durum10);
---					add_input_b <= z_add(durum10);
+--				elsif (durum7 = 3) then
+--					durum4 <= 21;
+--					durum7 <= 0;
 --				end if;
 --			end if;
-			
+----------------------------------------------------------------------------------------
+--			
+--			if (durum4 = 21) then
+--				if (durum7 = 0) then
+--					add_input_a <= inputs_weights2(5);
+--					add_input_b <= inputs_weights2(6);
+--					durum7 <= 1;
+--
+--				elsif (durum7 = 1) then
+--					z_add(durum11)<= add_result;					----------------- z_add(7)
+--					durum11 <= durum11 +1;
+--					durum7 <= 2;
+--					if (durum11 = 7) then
+--						durum7 <= 3;
+--					end if;
+--
+--				elsif (durum7 = 2) then
+--					add_input_a <= z_add(durum11-1);
+--					add_input_b <= inputs_weights2(durum11+1);
+--					durum7 <= 1;
+--
+--				elsif (durum7 = 3) then
+--					add_input_a <= z_add(3);
+--					add_input_b <= bias_all(5);
+--					durum7 <= 4;
+--				
+--				elsif (durum7 = 4) then
+--					z_add(0)<= add_result;
+--					durum7 <= 5;
+--				
+--				elsif (durum7 = 5) then
+--					add_input_a <= z_add(7);
+--					add_input_b <= bias_all(6);
+--					z_add(1)<= add_result;
+--					durum7 <= 6;
+--					
+--				elsif (durum7 = 6) then
+--					z_add(1)<= add_result;
+--					durum7 <= 7;
+--				
+--				elsif (durum7 = 7) then
+--					z_addminus2(0) <= z_add(0);
+--					z_addminus2(1) <= z_add(1);
+--					z_addminus2(0)(31 downto 31) <= not z_add1(0)(31 downto 31);
+--					z_addminus2(1)(31 downto 31) <= not z_add2(1)(31 downto 31);
+--					durum4 <= 22;
+--					durum7 <= 0;
+--				end if;
+--			end if;
+--
+--			if (durum4 = 22) then
+--				exp_input1 <= z_add(0);				
+--				exp_input2 <= z_add(1);				
+--				durum4 <= 23;
+--			end if;
+--			
+--			if (durum4 = 23) then
+--				exp_z2(0) <= exp_out1;
+--				exp_z2(1) <= exp_out2;
+--				durum4 <= 24;
+--			end if;
+--			
+--			if (durum4 = 23) then
+--				exp_input1 <= z_addminus2(0);
+--				exp_minusz2(0) <= exp_out1;
+--				exp_input2 <= z_addminus2(1);
+--				exp_minusz2(1) <= exp_out2;
+--				durum4 <= 24;
+--			end if;
+--
+--			if (durum4 = 24) then
+--				if (SW(8 downto 7) = "00") then		-- sigmoid
+--					if (durum7 = 0) then
+--						add_input_a <= one;
+--						add_input_b <= exp_minusz2(0);
+--						z_add(2)	<= add_result;
+--						durum7 <= 1;
+--						
+--					elsif (durum7 = 1) then
+--						div_input_a <=one;
+--						div_input_b <=z_add(2);
+--						gz2(0) <= div_result;
+--						durum7 <= 2;
+--					
+--					elsif (durum7 = 2) then
+--						add_input_a <= one;
+--						add_input_b <= exp_minusz2(1);
+--						z_add(3)	<= add_result;
+--						durum7 <= 3;
+--						
+--					elsif (durum7 = 3) then
+--						div_input_a <=one;
+--						div_input_b <=z_add(3);
+--						gz2(1) <= div_result;
+--						durum7 <= 0;
+--						durum4 <= 25;
+--					end if;
+--				end if;
+--				
+----------------------------------------------------------------------------------------
+--				if (SW(8 downto 7) = "01") then		-- hyperbolic
+--					if (durum7 = 0) then
+--						sub_input_a <= exp_z2(0);
+--						sub_input_b <= exp_minusz2(0);
+--						z_add(2)	<= add_result;
+--						durum7 <= 1;
+--						
+--					elsif (durum7 = 1) then
+--						add_input_a <= exp_z2(0);
+--						add_input_b <= exp_minusz2(0);
+--						z_add(3)	<= add_result;
+--						durum7 <= 2;
+--						
+--					elsif (durum7 = 2) then
+--						div_input_a <= z_add(2);
+--						div_input_b <= z_add(3);
+--						gz2(0) <= div_result;
+--						durum7 <= 3;
+--						
+--					elsif (durum7 = 3) then
+--						sub_input_a <= exp_z2(1);
+--						sub_input_b <= exp_minusz2(1);
+--						z_add(2)	<= add_result;
+--						durum7 <= 4;
+--						
+--					elsif (durum7 = 4) then
+--						add_input_a <= exp_z2(1);
+--						add_input_b <= exp_minusz2(1);
+--						z_add(3)	<= add_result;
+--						durum7 <= 5;
+--						
+--					elsif (durum7 = 5) then
+--						div_input_a <= z_add(2);
+--						div_input_b <= z_add(3);
+--						gz2(1) <= div_result;
+--						durum7 <= 0;
+--						durum4 <= 25;
+--					end if;
+--				end if;
+--				
+----------------------------------------------------------------------------------------
+--
+--				if (SW(8 downto 7) = "10") then		-- relu
+--					if (z_add(0)(31 downto 31) = "0") then	-- relu
+--						gz2(0) <= z_add(0);
+--					elsif (z_add(0)(31 downto 31) = "1") then
+--						gz2(0) <= x"00000000";
+--					end if;
+--					
+--					if (z_add(1)(31 downto 31) = "0") then	-- relu
+--						gz2(1) <= z_add(1);
+--					elsif (z_add(0)(31 downto 31) = "1") then
+--						gz2(1) <= x"00000000";
+--					end if;
+--					durum4 <= 25;
+--				end if;
+----------------------------------------------------------------------------------------
+--			end if; 	-- if(durum4 =24) end
 		end if;
 	
 	end process;
@@ -618,13 +793,13 @@ use ieee.std_logic_arith.all;
 				LEDR <= inputs_weights2(conv_integer(STD_LOGIC_VECTOR(SW(3 downto 0))))(31 downto 14);
 				
 			elsif (SW(17 downto 14) = "0010") then
-				LEDR <= z_add3(conv_integer(STD_LOGIC_VECTOR(SW(3 downto 0))))(31 downto 14);
+				LEDR <= gz2(conv_integer(STD_LOGIC_VECTOR(SW(3 downto 0))))(31 downto 14);
 				
-			elsif (SW(17 downto 14) = "0011") then
-				LEDR <= z_add4(conv_integer(STD_LOGIC_VECTOR(SW(3 downto 0))))(31 downto 14);
-				
-			elsif (SW(17 downto 14) = "0100") then
-				LEDR <= z_add5(conv_integer(STD_LOGIC_VECTOR(SW(3 downto 0))))(31 downto 14);
+--			elsif (SW(17 downto 14) = "0011") then
+--				LEDR <= z_add4(conv_integer(STD_LOGIC_VECTOR(SW(3 downto 0))))(31 downto 14);
+--				
+--			elsif (SW(17 downto 14) = "0100") then
+--				LEDR <= z_add5(conv_integer(STD_LOGIC_VECTOR(SW(3 downto 0))))(31 downto 14);
 				
 			end if;
 		end if;
