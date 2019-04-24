@@ -1,0 +1,12 @@
+|component_example
+A => and_gate:U.in1
+B => and_gate:U.in2
+C << and_gate:U.output
+
+
+|component_example|and_gate:U
+in1 => output.IN0
+in2 => output.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+

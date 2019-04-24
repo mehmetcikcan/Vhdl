@@ -1,0 +1,3 @@
+git status
+git commit -m "vhdl learning" --all
+git push -u origin master

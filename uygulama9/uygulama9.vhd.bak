@@ -1,0 +1,33 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use work.TYPES.all;
+
+entity uygulama9 is
+end entity uygulama9;
+
+architecture behavior of uygulama9 is
+  constant delay: TIME := 10 NS;
+  signal F, G : T;
+begin
+
+  Stimulus: process
+  begin
+    F <= 0.0;
+	wait for delay;
+    F <= 0.1;
+	wait for delay;
+    F <= 0.7;
+	wait for delay;
+    F <= 0.4;
+	wait for delay;
+    F <= 0.5;
+	wait for delay;
+    F <= 0.93;
+	wait for delay;
+    wait;
+  end process; 
+ 
+  D : entity work.EX_FLOATING(A1)
+    port map (F, G);
+
+end architecture behavior;

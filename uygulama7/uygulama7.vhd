@@ -24,7 +24,7 @@ end uygulama7;
 architecture Behavioral of uygulama7 is constant N: integer :=18; 
 type arr is array (1 to N) of std_logic_vector(7 downto 0); 
 constant datas : arr := (X"38",X"0c",X"06",X"01",X"C0",X"4D",x"45",x"48",x"4D",x"45",x"54",x"20",x"43",x"49",x"4B",x"43",x"41",x"4E");-- COMMAND DATA
---								 CMN1	 CMN2	 CMN3	 CMN3  CMN4		M		E		H		M		E		T				C		I		K		C		A		N
+--			 CMN1  CMN2  CMN3  CMN3  CMN4  M     E     H     M     E     T           C     I     K     C     A     N
 begin
 
 LCD_RW <= '0';  -- LCD WRITE

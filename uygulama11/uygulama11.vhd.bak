@@ -1,0 +1,51 @@
+	library IEEE;
+	use IEEE.STD_LOGIC_1164.ALL;
+	
+	entity uygulama11 is
+		  Port (    
+						asd		  : out std_logic;						
+						result	  : out  STD_LOGIC_vector(31 downto 0);
+
+						clk : in std_logic);
+	end uygulama11;
+	
+	
+	
+	architecture Behavioral of uygulama11 is
+	signal a   : std_logic_vector(31 downto 0) := x"00100000";
+						signal b   : std_logic_vector(31 downto 0) := x"00100000";
+	
+	signal clk2 :std_logic:= '0';
+--	
+--	COMPONENT f_p
+--			PORT(    clock	:	IN  STD_LOGIC;
+--						dataa	:	IN  STD_LOGIC_VECTOR (31 DOWNTO 0);
+--						datab	:	IN  STD_LOGIC_VECTOR (31 DOWNTO 0);
+--						result:	OUT  STD_LOGIC_VECTOR (31 DOWNTO 0) );
+--						
+--						
+--	END COMPONENT;
+	
+	
+	begin
+	
+	process(clk)
+		variable	counter:integer;
+				
+		begin 
+		if rising_edge(clk) then 
+			counter:= counter+1;
+				
+			if (counter >50000000) then
+				 clk2 <= not clk2;
+				 asd <= clk2;
+				 counter:= 0;
+	
+			end if;		
+		end if;
+			
+	end process;
+	
+--		U: f_p PORT MAP(  clock =>clk2 , dataa =>a , datab =>b , result => result );
+			
+end Behavioral;

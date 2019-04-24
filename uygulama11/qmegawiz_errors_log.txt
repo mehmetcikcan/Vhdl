@@ -1,0 +1,37 @@
+
+
+/home/mehmet/FPGA_UYGULAMA/uygulama11/f_p_add.v
+
+Mar 29 11AM:29:16>: The following design file, which has identical name but a different extension 
+from the specified variation file, already exists in the working directory:
+
+f_p_add.vhd
+
+This may create a conflict of design files and/or lead to undesirable side
+effects.
+
+Is it OK to continue file generation?
+
+/home/mehmet/FPGA_UYGULAMA/uygulama11/f_p_sub.vhd
+
+Mar 29 11AM:30:42>: The following design file, which has identical name but a different extension 
+from the specified variation file, already exists in the working directory:
+
+f_p_sub.v
+
+This may create a conflict of design files and/or lead to undesirable side
+effects.
+
+Is it OK to continue file generation?
+
+/home/mehmet/FPGA_UYGULAMA/uygulama11/f_p_sub.vhd
+
+Mar 29 11AM:31:24>: The following design file, which has identical name but a different extension 
+from the specified variation file, already exists in the working directory:
+
+f_p_sub.v
+
+This may create a conflict of design files and/or lead to undesirable side
+effects.
+
+Is it OK to continue file generation?

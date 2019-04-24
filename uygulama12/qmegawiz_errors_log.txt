@@ -1,0 +1,25 @@
+
+
+/home/mehmet/FPGA_UYGULAMA/uygulama12/altfp_mult.vhd
+
+Apr 03 10AM:26:10>: Variation file name (altfp_mult) is identical with the name of one of its sub-components.
+
+MegaWizard Plug-In Manager will rename the variation to "altfp_mula" to prevent compilation errors
+
+/home/mehmet/FPGA_UYGULAMA/uygulama12/altfp_mult.v
+
+Apr 03 10AM:26:51>: Variation file name (altfp_mult) is identical with the name of one of its sub-components.
+
+MegaWizard Plug-In Manager will rename the variation to "altfp_mula" to prevent compilation errors
+
+/home/mehmet/FPGA_UYGULAMA/uygulama12/altfp_mult.v
+
+Apr 03 10AM:26:51>: The following design file, which has identical name but a different extension 
+from the specified variation file, already exists in the working directory:
+
+altfp_mula.vhd
+
+This may create a conflict of design files and/or lead to undesirable side
+effects.
+
+Is it OK to continue file generation?

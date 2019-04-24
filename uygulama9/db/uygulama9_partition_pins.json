@@ -1,0 +1,137 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "F3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "F3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "F3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "F3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "F3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "F3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "F3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "F3[7]",
+					"strict" : false
+				},
+				{
+					"name" : "F3[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Exception_Inf",
+					"strict" : false
+				},
+				{
+					"name" : "Exception_NaN",
+					"strict" : false
+				},
+				{
+					"name" : "Clk",
+					"strict" : false
+				},
+				{
+					"name" : "RoundingMode[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RoundingMode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "F1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "F1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "F1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "F1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "F1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "F1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "F1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "F1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "F2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "F2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "F2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "F2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "F2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "F2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "F2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "F2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "F2[8]",
+					"strict" : false
+				},
+				{
+					"name" : "F1[8]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

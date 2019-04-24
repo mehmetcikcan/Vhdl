@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "02/25/2019 15:10:38"
+-- DATE "03/09/2019 16:39:57"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -77,7 +77,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY 	uygulama8 IS
     PORT (
 	SW : IN std_logic_vector(0 TO 3);
-	HEX0 : OUT std_logic_vector(6 DOWNTO 0)
+	HEX0 : BUFFER std_logic_vector(6 DOWNTO 0)
 	);
 END uygulama8;
 

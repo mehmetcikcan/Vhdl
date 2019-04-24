@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, /home/mehmet/FPGA_UYGULAMA/uygulama10/component_example.vhd
+source_file = 1, /home/mehmet/FPGA_UYGULAMA/uygulama10/and_gate.vhd
+source_file = 1, /home/mehmet/intelFPGA_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, /home/mehmet/intelFPGA_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, /home/mehmet/intelFPGA_lite/18.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, /home/mehmet/intelFPGA_lite/18.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, /home/mehmet/FPGA_UYGULAMA/uygulama10/db/component_example.cbx.xml
+design_name = hard_block
+design_name = component_example
+instance = comp, \C~output\, C~output, component_example, 1
+instance = comp, \B~input\, B~input, component_example, 1
+instance = comp, \A~input\, A~input, component_example, 1
+instance = comp, \U|output\, U|output, component_example, 1

@@ -1,0 +1,25 @@
+
+
+/home/mehmet/FPGA_UYGULAMA/uygulama12/fpmult.v
+
+Apr 04 11AM:56:57>: The following design file, which has identical name but a different extension 
+from the specified variation file, already exists in the working directory:
+
+fpmult.vhd
+
+This may create a conflict of design files and/or lead to undesirable side
+effects.
+
+Is it OK to continue file generation?
+
+/home/mehmet/FPGA_UYGULAMA/uygulama12/fpmult.v
+
+Apr 04 12PM:02:45>: The following design file, which has identical name but a different extension 
+from the specified variation file, already exists in the working directory:
+
+fpmult.vhd
+
+This may create a conflict of design files and/or lead to undesirable side
+effects.
+
+Is it OK to continue file generation?
